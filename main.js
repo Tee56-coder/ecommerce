@@ -49,27 +49,86 @@ populateShop();
 // }
 
 function populateShop() {
-    return shop.innerHTML = shopData.map(function(each){
-        return `<div id=${each.id} class='item'>
-                    <img alt="food-Image" src=${each.img}>
+    return shop.innerHTML = shopData.map(function(shopItem){
+        // return `<div id=${shopItem.id} class='item'>
+        //             <img alt="food-Image" src=${shopItem.img}>
+        //             <div>\
+
+        //             <h1>${shopItem.name}</h1>
+        //                 <p>$${shopItem.price}</p></div>
+        //         </div>
+        //         `
+        
+        const { id, img, name, price } = shopItem;
+        return `<div id=${id} class='item'>
+                    <img alt="food-Image" src=${img}>
                     <div>\
 
-                    <h1>${each.name}</h1>
-                        <p>$${each.price}</p></div>
+                    <h1>${name}</h1>
+                        <p>$${price}</p></div>
                 </div>
                 `
     }).join('');
 }
 
 
-// popo();
+// // popo();
 
-// function popo () {
-//     return tomiBoy.innerHTML = shopData.map(function(toms){
-//         return `<h1>${toms.name}</h1>`
-//     }).join('');
+// // function popo () {
+// //     return tomiBoy.innerHTML = shopData.map(function(toms){
+// //         return `<h1>${toms.name}</h1>`
+// //     }).join('');
+// // }
+
+// // console.log(shopData.map(function(toms){
+// //     return toms.name;
+// // }).join(' '));
+
+
+// const toms = {
+//     name: 'Tomsky',
+//     type: 'human',
+//     gender: 'male',
+//     place: 'nigeria',
+//     thing:  125
 // }
 
-// console.log(shopData.map(function(toms){
-//     return toms.name;
-// }).join(' '));
+// console.log();
+
+// const myProps = {
+//     name: toms.name,
+//     type: toms.type,
+//     thing: toms.thing
+// }
+
+// console.log(myProps.type);
+
+// DESTRUCTURING
+// const { name, type, gender, place, thing } = toms
+
+// console.log(name);
+
+// for (bokks of shopData) {
+//     const { id, name, price, img } = bokks;
+
+//     console.log(id);
+// }
+
+// for (let i = 0; i < shopData.length; ++i) {
+//     // console.log(shopData[i]);
+
+//     const { id, name, price, img } = shopData[i]
+
+//     if(name !== 'Eba and Egusi') continue;
+//     console.log(name);
+
+// }
+
+
+// console.log(shopData[4]);
+
+// Quick Intro to Spread Operator
+
+const spreadExample = [...shopData, 'toms', 'josh']
+
+console.log(spreadExample);
